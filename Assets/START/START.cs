@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class START : MonoBehaviour
 {
@@ -28,7 +29,8 @@ public class START : MonoBehaviour
     public void Button_Level()
     {
         // call the PVE
-        Thread.Sleep(2000); // (you have to delete Thread.Sleep(2000);)
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("Background", LoadSceneMode.Single);
     }
 
     // When click < BACK > 
